@@ -15,6 +15,14 @@ bundle install # install gemfiles
 bundle exec rake db:create db:migrate # setup database
 ```
 
+## Start
+
+```
+bundle exec ruby app.rb
+
+# 起動後に http://localhost:4567/ にアクセスしてください。
+```
+
 ## API
 
 ### [GET] /api/tasks
