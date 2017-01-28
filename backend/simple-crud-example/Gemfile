@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+
+gem 'rake'
+gem 'sqlite3'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+
+group :development do
+  gem 'annotate'
+  gem 'pry', require: false
+  gem 'pry-byebug', require: false
+end
