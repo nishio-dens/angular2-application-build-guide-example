@@ -1,11 +1,16 @@
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/json'
 require 'sinatra/reloader'
 require 'json'
 
 require './task'
 
 class App < Sinatra::Base
+  before do
+    content_type 'application/json'
+  end
+
   get '/' do
     { 'System': 'All Green' }.to_json
   end
@@ -20,12 +25,13 @@ class App < Sinatra::Base
 
   post '/api/tasks' do
     task_attributes = JSON.parse(request.body.read)
+    task = Task.new(task_attributes)
 
-    if Task.create(task_attributes)
+    if task.save
       { }.to_json
     else
       status 422
-      { 'errors': 'something wrong' }
+      { 'errors': task.errors }.to_json
     end
   end
 
@@ -37,7 +43,7 @@ class App < Sinatra::Base
       { }.to_json
     else
       status 422
-      { 'errors': 'something wrong' }
+      { 'errors': task.errors }.to_json
     end
   end
 
