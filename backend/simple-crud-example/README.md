@@ -18,9 +18,9 @@ bundle exec rake db:create db:migrate # setup database
 ## Start
 
 ```
-bundle exec ruby app.rb
+bundle exec shotgun
 
-# 起動後に http://localhost:4567/ にアクセスしてください。
+# 起動後に http://localhost:9393/ にアクセスしてください。
 ```
 
 ## API
