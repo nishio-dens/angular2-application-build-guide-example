@@ -12,7 +12,7 @@ Simpleなタスク管理システムのバックエンドです。
 
 ```
 bundle install # install gemfiles
-bundle exec rake db:create db:migrate # setup database
+bundle exec rake db:create db:migrate db:seed # setup database
 ```
 
 ## Start
