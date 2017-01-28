@@ -11,9 +11,39 @@ class App < Sinatra::Base
   end
 
   get '/api/tasks' do
-    {
-      id: 1,
-      name: 'test'
-    }.to_json
+    Task.all.to_json
+  end
+
+  get '/api/tasks/:id' do
+    Task.find(params[:id]).to_json
+  end
+
+  post '/api/tasks' do
+    task_attributes = JSON.parse(request.body.read)
+
+    if Task.create(task_attributes)
+      { }.to_json
+    else
+      status 422
+      { 'errors': 'something wrong' }
+    end
+  end
+
+  put '/api/tasks/:id' do
+    task_attributes = JSON.parse(request.body.read)
+    task = Task.find(params[:id])
+
+    if Task.update(task_attributes)
+      { }.to_json
+    else
+      status 422
+      { 'errors': 'something wrong' }
+    end
+  end
+
+  delete '/api/tasks/:id' do
+    Task.find(params[:id]).destroy
+
+    {}.to_json
   end
 end
