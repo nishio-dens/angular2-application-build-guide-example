@@ -11,7 +11,8 @@ Simpleなタスク管理システムのバックエンドです。
 ## Setup
 
 ```
-bundle install
+bundle install # install gemfiles
+bundle exec rake db:create db:migrate # setup database
 ```
 
 ## API
