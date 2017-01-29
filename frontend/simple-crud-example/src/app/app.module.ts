@@ -5,16 +5,21 @@ import {HttpModule} from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
+import {TasksModule} from './tasks/tasks.module';
+
+const appRoutes: Routes = [
+];
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    RouterModule,
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    TasksModule
   ],
   providers: [],
   bootstrap: [AppComponent]
