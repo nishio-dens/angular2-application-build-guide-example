@@ -19,12 +19,12 @@ const routes: Routes = [
         component: TaskListComponent
       },
       {
-        path: 'tasks/:id',
-        component: TaskDetailComponent
-      },
-      {
         path: 'tasks/new',
         component: TaskNewComponent
+      },
+      {
+        path: 'tasks/:id',
+        component: TaskDetailComponent
       }
     ]
   }
