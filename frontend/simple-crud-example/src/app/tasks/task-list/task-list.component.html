@@ -17,12 +17,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let task of tasks">
-    <th>{{task.id}}</th>
-    <td>{{task.name}}</td>
-    <td>{{task.description}}</td>
-    <td>{{task.createdAt}}</td>
-    <td>{{task.updatedAt}}</td>
+  <tr *ngFor="let t of tasks">
+    <th>{{t.id}}</th>
+    <td>{{t.name}}</td>
+    <td>{{t.description}}</td>
+    <td>{{t.createdAt}}</td>
+    <td>{{t.updatedAt}}</td>
   </tr>
   </tbody>
 </table>

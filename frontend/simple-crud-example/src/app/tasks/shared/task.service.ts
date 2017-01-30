@@ -19,11 +19,11 @@ export class TaskService {
       .map(r => {
         return r.map(t =>
           new Task({
-            id: r['id'],
-            name: r['name'],
-            description: r['description'],
-            createdAt: r['createdAt'],
-            updatedAt: r['updatedAt']
+            id: t['id'],
+            name: t['name'],
+            description: t['description'],
+            createdAt: t['created_at'],
+            updatedAt: t['updated_at']
           })
         );
       });
