@@ -18,8 +18,16 @@
   </thead>
   <tbody>
   <tr *ngFor="let t of tasks">
-    <th>{{t.id}}</th>
-    <td>{{t.name}}</td>
+    <th>
+      <a [routerLink]="['tasks', t.id]">
+        {{t.id}}
+      </a>
+    </th>
+    <td>
+      <a [routerLink]="['tasks', t.id]">
+        {{t.name}}
+      </a>
+    </td>
     <td>{{t.description}}</td>
     <td>{{t.createdAt}}</td>
     <td>{{t.updatedAt}}</td>
