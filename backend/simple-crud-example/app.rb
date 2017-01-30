@@ -2,13 +2,17 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/json'
 require 'sinatra/reloader'
+require 'sinatra/cross_origin'
 require 'json'
 
 require './task'
 
 class App < Sinatra::Base
+  register Sinatra::CrossOrigin
+
   before do
     content_type 'application/json'
+    cross_origin
   end
 
   get '/' do

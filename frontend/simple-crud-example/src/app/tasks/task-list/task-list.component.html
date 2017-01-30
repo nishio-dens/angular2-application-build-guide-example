@@ -1,0 +1,46 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+
+<h3>Task List</h3>
+
+<hr>
+
+<div class="col-xs-12 text-right">
+  <a [routerLink]="['tasks', 'new']" class="btn btn-default">
+    Add Task
+  </a>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Created At</th>
+    <th>Updated At</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let t of tasks">
+    <th>
+      <a [routerLink]="['tasks', t.id]">
+        {{t.id}}
+      </a>
+    </th>
+    <td>
+      <a [routerLink]="['tasks', t.id]">
+        {{t.name}}
+      </a>
+    </td>
+    <td>{{t.description}}</td>
+    <td>{{t.createdAt}}</td>
+    <td>{{t.updatedAt}}</td>
+  </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+</div>
