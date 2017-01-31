@@ -47,14 +47,21 @@ export class TaskService {
   createTask(task: Task): Observable<any> {
     return this
       .http
-      .post('api/tasks/', JSON.stringify(task))
+      .post('api/tasks/', this.toJsonTask(task))
       .map(r => r.json());
   }
 
   updateTask(task: Task): Observable<any> {
     return this
       .http
-      .put('api/tasks/' + task.id, JSON.stringify(task))
+      .put('api/tasks/' + task.id, this.toJsonTask(task))
       .map(r => r.json());
+  }
+
+  private toJsonTask(task: Task) {
+    return JSON.stringify({
+      name: task.name,
+      description: task.description
+    });
   }
 }
