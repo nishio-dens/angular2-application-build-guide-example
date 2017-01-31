@@ -1,3 +1,40 @@
-<p>
-  task-detail works!
-</p>
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+
+<a routerLink="/tasks">Go Back to list</a>
+
+<h3>Edit Task</h3>
+
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm.value)">
+  <div class="form-group" [ngClass]="{'has-error': taskForm.controls['name'].invalid}">
+    <label>Task Name</label>
+    <input class="form-control" [formControl]="taskForm.controls['name']">
+    <div *ngIf="taskForm.controls['name'].hasError('required')"
+         class="alert alert-danger">
+      Is required.
+    </div>
+    <div *ngIf="taskForm.controls['name'].hasError('maxlength')"
+         class="alert alert-danger">
+       Cannot exceed 255 characters.
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': taskForm.controls['description'].invalid}">
+    <label>Task Description</label>
+    <input class="form-control" [formControl]="taskForm.controls['description']">
+
+    <div *ngIf="taskForm.controls['description'].hasError('maxlength')"
+         class="alert alert-danger">
+       Cannot exceed 255 characters.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
+    Submit
+  </button>
+</form>
+
+</div>
+</div>
+</div>
