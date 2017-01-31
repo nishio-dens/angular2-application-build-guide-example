@@ -7,12 +7,15 @@ import {TaskNewComponent} from './task-new/task-new.component';
 import {TaskDetailComponent} from './task-detail/task-detail.component';
 import {SharedModule} from '../shared/shared.module';
 import {TaskService} from './shared/task.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     TasksComponent,
