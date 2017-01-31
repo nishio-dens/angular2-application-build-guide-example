@@ -6,10 +6,10 @@
 
 <h3>Edit Task</h3>
 
-<form [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm.value)">
-  <div class="form-group" [ngClass]="{'has-error': taskForm.controls['name'].invalid}">
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class="form-group" [class.has-error]="taskForm.controls['name'].invalid">
     <label>Task Name</label>
-    <input class="form-control" [formControl]="taskForm.controls['name']">
+    <input class="form-control" formControlName="name" [(ngModel)]="task.name">
     <div *ngIf="taskForm.controls['name'].hasError('required')"
          class="alert alert-danger">
       Is required.
@@ -20,9 +20,9 @@
     </div>
   </div>
 
-  <div class="form-group" [ngClass]="{'has-error': taskForm.controls['description'].invalid}">
+  <div class="form-group" [class.has-error]="taskForm.controls['description'].invalid">
     <label>Task Description</label>
-    <input class="form-control" [formControl]="taskForm.controls['description']">
+    <input class="form-control" formControlName="description" [(ngModel)]="task.description">
 
     <div *ngIf="taskForm.controls['description'].hasError('maxlength')"
          class="alert alert-danger">
