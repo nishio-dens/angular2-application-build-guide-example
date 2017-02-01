@@ -6,5 +6,5 @@ ROOT_DIR=$(cd $(dirname $0);pwd)
 
 cd $ROOT_DIR
 cd frontend/simple-crud-example
-npm install
+yarn
 ng build --prod
