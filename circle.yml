@@ -10,4 +10,5 @@ dependencies:
 
 test:
   override:
+    - npm install -g angular-cli
     - ./test_all.sh
