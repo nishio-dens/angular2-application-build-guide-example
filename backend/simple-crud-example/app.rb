@@ -43,7 +43,7 @@ class App < Sinatra::Base
     task_attributes = JSON.parse(request.body.read)
     task = Task.find(params[:id])
 
-    if Task.update(task_attributes)
+    if task.update(task_attributes)
       { }.to_json
     else
       status 422

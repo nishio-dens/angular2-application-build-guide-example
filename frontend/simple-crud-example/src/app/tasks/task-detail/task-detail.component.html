@@ -1,3 +1,13 @@
-<p>
-  task-detail works!
-</p>
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+
+<a routerLink="/tasks">Go Back to list</a>
+
+<h3>Edit Task</h3>
+
+<task-form [task]="task" (saveTask)="onSubmit($event)"></task-form>
+
+</div>
+</div>
+</div>

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 <div class="row">
 <div class="col-xs-12">
 
@@ -7,7 +7,7 @@
 <hr>
 
 <div class="col-xs-12 text-right">
-  <a [routerLink]="['tasks', 'new']" class="btn btn-default">
+  <a [routerLink]="['/tasks/new']" class="btn btn-default">
     Add Task
   </a>
 </div>
@@ -25,12 +25,12 @@
   <tbody>
   <tr *ngFor="let t of tasks">
     <th>
-      <a [routerLink]="['tasks', t.id]">
+      <a [routerLink]="['/tasks', t.id]">
         {{t.id}}
       </a>
     </th>
     <td>
-      <a [routerLink]="['tasks', t.id]">
+      <a [routerLink]="['/tasks', t.id]">
         {{t.name}}
       </a>
     </td>
