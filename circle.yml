@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 6.2.0
+
+dependencies:
+  pre:
+    - npm install -g yarn
+    - npm install -g angular-cli
+
+test:
+  override:
+    - ./test_all.sh
