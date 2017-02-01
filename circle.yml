@@ -3,12 +3,15 @@ machine:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
 dependencies:
+  pre:
+    - npm install -g angular-cli
+
   override:
     - yarn
+
   cache_directories:
     - ~/.cache/yarn
 
 test:
   override:
-    - npm install -g angular-cli
     - ./test_all.sh
