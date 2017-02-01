@@ -47,7 +47,7 @@ export class TaskService {
   createTask(task: Task): Observable<any> {
     return this
       .http
-      .post('api/tasks/', this.toJsonTask(task))
+      .post('api/tasks', this.toJsonTask(task))
       .map(r => r.json());
   }
 
