@@ -12,5 +12,5 @@ tasks = [
 ]
 
 tasks.each do |t|
-  Task.create(t)
+  Task.create(t) unless Task.exists?(t[:id])
 end
