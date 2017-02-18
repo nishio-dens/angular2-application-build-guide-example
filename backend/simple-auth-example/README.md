@@ -12,6 +12,14 @@ bundle exec rails server
 
 and access to http://localhost:3000
 
+## Login User
+
+You can log in using the following information.
+
+Email: admin@densan-labs.net
+password: password
+
+
 ## Routing
 
 ```
