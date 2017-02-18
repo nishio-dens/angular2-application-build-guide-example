@@ -8,6 +8,7 @@ import {HttpModule} from '@angular/http';
 import {TaskListComponent} from './task-list/task-list.component';
 import {TaskDetailComponent} from './task-detail/task-detail.component';
 import {TaskService} from './shared/task.service';
+import {Angular2TokenService} from 'angular2-token';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {TaskService} from './shared/task.service';
     TaskDetailComponent
   ],
   providers: [
-    TaskService
+    TaskService,
+    Angular2TokenService
   ]
 })
 export class TasksModule { }
