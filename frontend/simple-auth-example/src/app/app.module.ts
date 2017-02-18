@@ -8,6 +8,8 @@ import {PageNotFoundComponent} from './shared/page-not-found/page-not-found.comp
 import {Routes, RouterModule} from '@angular/router';
 import {SharedModule} from './shared/shared.module';
 import {TasksModule} from './tasks/tasks.module';
+import {AuthenticationsModule} from './authentications/authentications.module';
+import {A2tUiModule, Angular2TokenService} from 'angular2-token';
 
 const appRoutes: Routes = [
   {
@@ -26,9 +28,13 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     SharedModule,
-    TasksModule
+    TasksModule,
+    AuthenticationsModule,
+    A2tUiModule
   ],
-  providers: [],
+  providers: [
+    Angular2TokenService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
