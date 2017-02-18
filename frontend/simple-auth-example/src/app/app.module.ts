@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {AppComponent} from './app.component';
+import {PageNotFoundComponent} from './shared/page-not-found/page-not-found.component';
 import {Routes, RouterModule} from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import {SharedModule} from './shared/shared.module';
+import {TasksModule} from './tasks/tasks.module';
 
 const appRoutes: Routes = [
   {
@@ -18,14 +19,14 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    NavbarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule,
+    TasksModule
   ],
   providers: [],
   bootstrap: [AppComponent]
