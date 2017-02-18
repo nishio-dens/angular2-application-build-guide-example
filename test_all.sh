@@ -13,4 +13,5 @@ ng build --prod
 cd $ROOT_DIR
 cd frontend/simple-auth-example
 yarn
+./setup.sh
 ng build --prod
