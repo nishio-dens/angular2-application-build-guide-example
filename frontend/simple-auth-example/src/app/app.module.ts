@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {Routes, RouterModule} from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   {
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
