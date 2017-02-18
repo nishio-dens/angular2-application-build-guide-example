@@ -9,12 +9,19 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  currentUserUid: string;
+
   constructor(
     private tokenService: Angular2TokenService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.tokenService.validateToken().subscribe(
+      r => {
+        this.currentUserUid = this.tokenService.currentUserData.uid
+      }
+    );
   }
 
   logout() {
