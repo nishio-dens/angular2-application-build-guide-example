@@ -1,11 +1,12 @@
 # SimpleAuthExample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.31.
+This is a sample project about angular and rails authentication.
 
 ## Setup
 
 ```
 yarn # you need yarn to install some plugins
+./setup.sh # and change src/environments/environment.ts to your own settings.
 ng serve
 ```
 
