@@ -17,7 +17,7 @@ export class TaskService {
   getTasks(): Observable<Task[]> {
     return this
       .http
-      .get(this.baseUrl + 'api/tasks')
+      .get(this.baseUrl + '/api/tasks')
       .map(r => r.json())
       .map(r => {
         return r.map(t =>
@@ -35,7 +35,7 @@ export class TaskService {
   getTask(id: number): Observable<Task> {
     return this
       .http
-      .get(this.baseUrl + 'api/tasks/' + id)
+      .get(this.baseUrl + '/api/tasks/' + id)
       .map(r => r.json())
       .map(t => new Task({
           id: t['id'],
