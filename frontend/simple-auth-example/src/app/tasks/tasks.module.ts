@@ -5,6 +5,7 @@ import {TasksComponent} from './tasks.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {SharedModule} from '../shared/shared.module';
 import {HttpModule} from '@angular/http';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import {HttpModule} from '@angular/http';
     BrowserModule,
     HttpModule
   ],
-  declarations: [TasksComponent]
+  declarations: [TasksComponent, TaskListComponent]
 })
 export class TasksModule { }
