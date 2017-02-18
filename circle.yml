@@ -1,11 +1,11 @@
 machine:
   node:
-    version: 6.2.0
+    version: 6.9.0
 
 dependencies:
   pre:
     - npm install -g yarn
-    - npm install -g angular-cli
+    - npm install -g @angular/cli
 
 test:
   override:
