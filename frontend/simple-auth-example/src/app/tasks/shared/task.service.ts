@@ -1,23 +1,21 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
 import {Task} from './task.model';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 import {environment} from '../../../environments/environment';
+import {Angular2TokenService} from 'angular2-token';
 
 @Injectable()
 export class TaskService {
 
-  private baseUrl: string = environment.apiBaseUrl;
-
   constructor(
-    private http: Http
+    private tokenService: Angular2TokenService
   ) { }
 
   getTasks(): Observable<Task[]> {
     return this
-      .http
-      .get(this.baseUrl + '/api/tasks')
+      .tokenService
+      .get('api/tasks')
       .map(r => r.json())
       .map(r => {
         return r.map(t =>
@@ -34,8 +32,8 @@ export class TaskService {
 
   getTask(id: number): Observable<Task> {
     return this
-      .http
-      .get(this.baseUrl + '/api/tasks/' + id)
+      .tokenService
+      .get('api/tasks/' + id)
       .map(r => r.json())
       .map(t => new Task({
           id: t['id'],
