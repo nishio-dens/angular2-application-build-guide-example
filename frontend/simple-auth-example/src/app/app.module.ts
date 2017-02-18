@@ -9,7 +9,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {SharedModule} from './shared/shared.module';
 import {TasksModule} from './tasks/tasks.module';
 import {AuthenticationsModule} from './authentications/authentications.module';
-import {A2tUiModule, Angular2TokenService} from 'angular2-token';
+import {Angular2TokenService} from 'angular2-token';
 
 const appRoutes: Routes = [
   {
@@ -29,8 +29,7 @@ const appRoutes: Routes = [
     HttpModule,
     SharedModule,
     TasksModule,
-    AuthenticationsModule,
-    A2tUiModule
+    AuthenticationsModule
   ],
   providers: [
     Angular2TokenService

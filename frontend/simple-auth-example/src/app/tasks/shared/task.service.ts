@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Task} from './task.model';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
-import {environment} from '../../../environments/environment';
 import {Angular2TokenService} from 'angular2-token';
 
 @Injectable()
