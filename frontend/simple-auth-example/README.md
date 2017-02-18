@@ -10,6 +10,21 @@ yarn # you need yarn to install some plugins
 ng serve
 ```
 
+and also you need to run backend server.
+
+```
+cd ../backend/simple-auth-example/
+# see README.md how to run backend server
+```
+
+## Login User Information
+
+You can log in using the following information.
+
+Email: admin@densan-labs.net
+password: password
+
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
