@@ -10,8 +10,13 @@ import {SharedModule} from './shared/shared.module';
 import {TasksModule} from './tasks/tasks.module';
 import {AuthenticationsModule} from './authentications/authentications.module';
 import {Angular2TokenService} from 'angular2-token';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
   {
     path: '**',
     component: PageNotFoundComponent
@@ -21,6 +26,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

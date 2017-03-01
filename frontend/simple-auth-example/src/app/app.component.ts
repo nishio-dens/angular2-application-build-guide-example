@@ -17,7 +17,7 @@ export class AppComponent {
       .init({
         apiBase: environment.apiBaseUrl,
         signInPath: 'api/auth/sign_in',
-        signInRedirect: 'auth/login',
+        signInRedirect: 'dashboard',
         signOutPath: 'api/auth/sign_out',
         signOutFailedValidate: true,
         validateTokenPath: 'api/auth/validate_token',
